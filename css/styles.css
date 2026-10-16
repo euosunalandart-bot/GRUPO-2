@@ -1,0 +1,626 @@
+:root {
+    --color-primario: #0f172a;      
+    --color-secundario: #2563eb;    
+    --color-acento: #f97316;        
+    --color-fondo: #f8fafc;         
+    --color-texto: #334155;         
+    --color-tarjeta: #ffffff;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    margin: 0;
+    padding: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+    color: white;
+    padding: 1.8rem 2.5rem;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.25);
+    border-bottom: 4px solid var(--color-acento);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.logo-contenedor {
+    background: white;
+    padding: 8px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.logo-img {
+    height: 70px; 
+    width: auto;
+    object-fit: contain;
+}
+
+.header-textos h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 800;
+}
+
+.subtitulo-header {
+    margin: 5px 0 0 0;
+    font-size: 1.1rem;
+    color: #93c5fd;
+    font-weight: 500;
+}
+
+.banner {
+    background: linear-gradient(90deg, #dbeafe 0%, #eff6ff 100%);
+    color: #1e40af;
+    padding: 1.2rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    border-left: 6px solid var(--color-secundario);
+}
+
+.panel-filtros {
+    background: var(--color-tarjeta);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    border: 1px solid #e2e8f0;
+}
+
+.grupo-control {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.panel-filtros label {
+    font-weight: 700;
+    color: var(--color-primario);
+}
+
+.panel-filtros select {
+    padding: 0.7rem 1rem;
+    border: 2px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.grid-catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.tarjeta-card {
+    background-color: var(--color-tarjeta);
+    border-radius: 14px;
+    padding: 1.8rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease;
+    border: 1px solid #e2e8f0;
+}
+
+.tarjeta-libre {
+    border-top: 5px solid #10b981; 
+}
+
+.tarjeta-ocupada {
+    border-top: 5px solid #ef4444; 
+    opacity: 0.85;
+}
+
+.tarjeta-card:hover {
+    transform: translateY(-6px);
+}
+
+.tarjeta-card h3 {
+    margin-top: 0;
+    color: var(--color-primario);
+}
+
+.badge-estado {
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.badge-verde { background-color: #d1fae5; color: #065f46; }
+.badge-rojo { background-color: #fee2e2; color: #991b1b; }
+
+#seccion-formulario {
+    background: var(--color-tarjeta);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    margin-top: 2.5rem;
+    max-width: 650px;
+    border: 1px solid #e2e8f0;
+}
+
+.campo-formulario {
+    margin-bottom: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.campo-formulario label {
+    font-weight: 700;
+}
+
+.campo-formulario input {
+    padding: 0.8rem 1rem;
+    border: 2px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.btn-primario {
+    background-color: var(--color-secundario);
+    color: #ffffff;
+    border: none;
+    padding: 0.9rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    width: 100%;
+    margin-top: 0.8rem;
+}
+
+.btn-primario:hover {
+    background-color: #1d4ed8;
+}
+
+.seccion-turnos {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    background: var(--color-tarjeta);
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.bloque-horario h3 {
+    font-size: 1.15rem;
+    color: var(--color-secundario);
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.grid-turnos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.8rem;
+}
+
+.turno-item {
+    padding: 0.9rem 1rem;
+    background-color: #f1f5f9;
+    border-left: 5px solid #10b981; 
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.turno-ocupado {
+    background-color: #fee2e2;
+    border-left-color: #ef4444; 
+    color: #991b1b;
+}
+
+footer {
+    margin-top: 4rem;
+    text-align: center;
+    color: #64748b;
+    font-size: 0.95rem;
+    padding: 1rem 0;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* Pantalla completa para el login */
+.pantalla-completa {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-fondo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Clase de utilidad para ocultar mediante JS */
+.oculto {
+    display: none !important;
+}
+
+/* Contenedor central del formulario */
+.contenedor-login {
+    background: var(--color-tarjeta);
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 90%;
+    border: 2px solid var(--color-secundario);
+}
+
+.contenedor-login h2 {
+    margin-top: 0;
+    color: var(--color-primario);
+    font-size: 1.8rem;
+}
+
+/* Estilos de los botones del login */
+.botones-modal {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.btn-secundario {
+    background-color: #cbd5e1;
+    color: #334155;
+    border: none;
+    padding: 0.9rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    width: 100%;
+}
+
+.btn-secundario:hover {
+    background-color: #94a3b8;
+}
+
+
+
+.estado--ok {
+    background: #e3f5e8;
+    color: #1c5b2e;
+}
+
+.estado--aviso {
+    background: #fff4e0;
+    color: #8a4b00;
+}
+
+.estado--error {
+    background: #fde8e8;
+    color: #9b1c1c;
+}
+
+
+/* ETAPA 7: VIDEOTECA */
+
+.videoteca {
+    margin: 2rem auto;
+    padding: 1.5rem;
+    max-width: 1100px;
+}
+
+.videoteca__principal {
+    max-width: 850px;
+    margin: 0 auto 1.5rem;
+}
+
+#video-principal {
+    display: block;
+    width: 100%;
+    max-height: 480px;
+    background: #000;
+    border-radius: 10px;
+}
+
+#titulo-video {
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.videoteca__lista {
+    display: grid;
+    gap: 0.75rem;
+    padding-left: 2rem;
+}
+
+.videoteca__lista button {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    text-align: left;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fff;
+    color: #222;
+}
+
+.videoteca__lista button:hover {
+    background: #f0f4f8;
+}
+
+.videoteca__lista button[aria-current="true"] {
+    border-color: #176b45;
+    background: #e8f5ed;
+    font-weight: 600;
+}
+
+.videoteca__lista button:focus-visible {
+    outline: 3px solid #176b45;
+    outline-offset: 3px;
+}
+
+#aviso-video {
+    margin-top: 1rem;
+}
+
+
+/* ETAPA 10: cifras animadas */
+.cifras {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: var(--color-tarjeta);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.cifras > div {
+    flex: 1 1 150px;
+    text-align: center;
+}
+
+.cifras dt {
+    color: var(--color-primario);
+    font-weight: 600;
+}
+
+.cifras dd {
+    margin: 0.5rem 0 0;
+    color: var(--color-secundario);
+    font-size: 2rem;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+}
+
+/* ETAPA 10: indicador Lottie */
+.carga {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 0;
+}
+
+.carga[hidden],
+#cargador[hidden] {
+    display: none !important;
+}
+
+/* ==========================================
+   ETAPA 9: GUÍA DE MOVIMIENTO Y ANIMACIONES
+   ========================================== */
+
+/* 1. Guía de movimiento en :root */
+:root {
+    --dur-rapida: 150ms;   /* hover, foco, pulsación */
+    --dur-media: 300ms;    /* aparecer, abrir */
+    --dur-lenta: 600ms;    /* entrada escalonada */
+    --ease-salida: cubic-bezier(.2, .8, .2, 1);  /* frena */
+    --ease-entrada: cubic-bezier(.4, 0, 1, 1);   /* acelera */
+}
+
+/* 2. Tarjetas: respuesta inmediata y animación */
+.tarjeta-card, .tarjeta {
+    transition: transform var(--dur-rapida) var(--ease-salida),
+                box-shadow var(--dur-rapida) var(--ease-salida);
+    animation: entrar var(--dur-lenta) var(--ease-salida) both;
+    animation-delay: calc(var(--i, 0) * 60ms);
+}
+
+.tarjeta-card:hover, .tarjeta-card:focus-visible,
+.tarjeta:hover, .tarjeta:focus-visible {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 3. Entrada escalonada */
+@keyframes entrar {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* 4. Visor: aparecer con anticipación mínima */
+#visor[open], dialog[open] {
+    animation: aparecer var(--dur-media) var(--ease-salida);
+}
+
+#visor[open]::backdrop, dialog[open]::backdrop {
+    animation: fundido var(--dur-media) ease-out;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(.96);
+    }
+}
+
+@keyframes fundido {
+    from {
+        opacity: 0;
+    }
+}
+
+/* 5. Audio sonando: ecualizador (3 barras) */
+.audio__eq {
+    display: inline-flex;
+    gap: 2px;
+    height: 14px;
+    align-items: flex-end;
+    visibility: hidden;
+}
+
+.audio--sonando .audio__eq {
+    visibility: visible;
+}
+
+.audio__eq i {
+    width: 3px;
+    height: 100%;
+    background: #923a38;
+    transform-origin: bottom;
+    animation: eq .6s ease-in-out infinite alternate paused;
+}
+
+.audio--sonando .audio__eq i {
+    animation-play-state: running;
+}
+
+.audio__eq i:nth-child(2) { animation-delay: -.2s; }
+.audio__eq i:nth-child(3) { animation-delay: -.4s; }
+
+@keyframes eq {
+    from { transform: scaleY(.25); }
+}
+
+/* 6. Aviso de error: sacudida una sola vez */
+.estado--error {
+    animation: sacudir .4s var(--ease-salida) 1;
+}
+
+@keyframes sacudir {
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+}
+
+/* 7. Reducir movimiento: se reduce, no se rompe */
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --dur-rapida: 1ms;
+        --dur-media: 1ms;
+        --dur-lenta: 1ms;
+    }
+    .tarjeta-card, .tarjeta, .estado--error, #visor[open] {
+        animation: none !important;
+    }
+    .audio__eq i {
+        animation: none;
+        transform: scaleY(.6);
+    }
+}
+
+/* ==========================================
+   ETAPA 6: REPRODUCTOR DE AUDIO
+   ========================================== */
+
+.audios {
+    margin: 2rem auto;
+    padding: 1.5rem;
+    max-width: 1100px;
+    display: grid;
+    gap: 1rem;
+}
+
+.audio {
+    display: grid;
+    grid-template-columns: 48px 1fr 110px;
+    gap: .75rem; 
+    align-items: center;
+    padding: .75rem;
+    border: 1px solid #ddd; 
+    border-radius: 10px;
+    background: var(--color-tarjeta, #fff);
+}
+
+.audio--sonando {
+    border-color: #923A38;
+    box-shadow: 0 0 0 2px #923A3833;
+}
+
+.audio__play {
+    width: 44px; 
+    height: 44px; /* zona táctil recomendada */
+    border-radius: 50%; 
+    border: 0;
+    background: #923A38; 
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.audio__play:focus-visible {
+    outline: 3px solid #00B0F0; 
+    outline-offset: 2px;
+}
+
+.audio__cuerpo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.audio__titulo {
+    margin: 0;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--color-primario, #0f172a);
+}
+
+.audio__progreso { 
+    width: 100%; 
+    cursor: pointer;
+}
+
+.audio__tiempo {
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+.audio__volumen {
+    cursor: pointer;
+}
+
+.audio__credito {
+    grid-column: 2 / 4; 
+    font-size: 0.8rem; 
+    color: #555;
+    margin: 0;
+}

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GilenaApp - Área de Deportes</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer src="js/app.js"></script>
+    <script defer src="js/storage-engine.js"></script>
+    <script defer src="js/events-engine.js"></script>
+    <script defer src="js/api-engine.js"></script>
+    <script defer src="js/media-engine.js" ></script>
+   
+    <script defer src="https://unpkg.com/@lottiefiles/lottie-player@2/dist/lottie-player.js"></script>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <div class="logo-contenedor">
+                <img src="image/logo-gilenapp.jpg" alt="Logotipo oficial de GilenaApp" class="logo-img" loading="lazy">
+            </div>
+            <div class="header-textos">
+                <h1>GilenaApp</h1>
+                <p class="subtitulo-header">Área de Deportes - Ayuntamiento de Gilena</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="banner">
+            Portal Oficial de Gestión y Reservas de Instalaciones Deportivas Municipales
+        </div>
+        
+        <section class="panel-filtros">
+            <div class="grupo-control">
+                <label for="select-rol">Perfil de Acceso:</label>
+                <select id="select-rol" onchange="cambiarRolUsuario()">
+                    <option value="CIUDADANO">Ciudadano</option>
+                    <option value="GESTOR">Gestor</option>
+                    <option value="ADMIN">Administrador</option>
+                </select>
+            </div>
+
+            <div class="grupo-control">
+                <label for="filtro-deporte">Filtrar Instalación:</label>
+                <select id="filtro-deporte" onchange="filtrarInstalacionesPorSelect()">
+                    <option value="todos">Todas las Instalaciones</option>
+                    <option value="aire libre">Al aire libre</option>
+                    <option value="cubierto">Cubierto</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Catálogo dinámico generado por JavaScript -->
+         <div class="grupo-control">
+    <label for="filtro-busqueda">Buscar instalación:</label>
+    <input 
+        type="text" 
+        id="filtro-busqueda" 
+        placeholder="Escribe el nombre de una instalación..."
+    >
+</div>
+        <div id="contenedor-catalogo" class="grid-catalogo"></div>
+
+        <section class="seccion-turnos">
+            <h2>Horarios y Turnos Disponibles (09:00 - 21:00 h)</h2>
+            
+            <div class="bloque-horario">
+                <h3> Turnos de Mañana (09:00 - 12:00 h)</h3>
+                <div id="lista-turnos-manana" class="grid-turnos"></div>
+            </div>
+
+            <div class="bloque-horario" style="margin-top: 2rem;">
+                <h3> Turnos de Tarde (A partir de las 12:00 h)</h3>
+                <div id="lista-turnos-tarde" class="grid-turnos"></div>
+            </div>
+        </section>
+    </main>
+
+    <section id="seccion-formulario">
+        <h2>Formulario de Gestión y Reservas</h2>
+        <form id="form-reserva" onsubmit="enviarReservaFormulario(event)">
+            <div class="campo-formulario">
+                <label for="input-instalacion">Instalación seleccionada:</label>
+                <input type="text" id="input-instalacion" value="Pista Central de Pádel" readonly>
+            </div>
+            <div class="campo-formulario">
+                <label for="input-hora-inicio">Seleccionar Turno / Hora de Inicio:</label>
+                <select id="input-hora-inicio" required>
+                    <option value="09:00">09:00 - 10:00 h</option>
+                    <option value="10:00">10:00 - 11:00 h</option>
+                    <option value="12:00">12:00 - 13:00 h</option>
+                    <option value="13:00">13:00 - 14:00 h</option>
+                    <option value="15:00">15:00 - 16:00 h</option>
+                    <option value="16:00">16:00 - 17:00 h</option>
+                    <option value="17:00">17:00 - 18:00 h</option>
+                    <option value="18:00">18:00 - 19:00 h</option>
+                    <option value="20:00">20:00 - 21:00 h</option>
+                    <option value="21:00">21:00 - 22:00 h</option>
+                </select>
+            </div>
+            <div class="campo-formulario">
+                <label for="input-fecha">Fecha de la reserva:</label>
+                <input type="date" id="input-fecha" required>
+            </div>
+
+            <!-- Nuevas opciones para elegir descuentos y extras -->
+            <div class="campo-checkbox">
+                <input type="checkbox" id="input-empadronado">
+                <label for="input-empadronado">¿Estás empadronado en Gilena? (Aplica 20% de descuento)</label>
+            </div>
+            <div class="campo-checkbox" style="margin-top: 0.8rem;">
+                <input type="checkbox" id="input-luz">
+                <label for="input-luz">¿Necesitas luz suplementaria? (+2,50 €/h)</label>
+            </div>
+
+            <button type="submit" id="btn-enviar-reserva" class="btn-primario" style="margin-top: 1.5rem;">Confirmar y Enviar Reserva</button>
+        </form>
+    </section>
+
+    <!-- Pantalla completa para Login de Gestor/Admin -->
+    <div id="pantalla-login" class="pantalla-completa oculto">
+        <div class="contenedor-login">
+            <h2 id="titulo-login">Acceso Restringido</h2>
+            <p>Por favor, introduce tus credenciales.</p>
+            <form id="form-login" onsubmit="procesarLogin(event)">
+                <div class="campo-formulario">
+                    <label for="input-usuario">Usuario:</label>
+                    <input type="text" id="input-usuario" required>
+                </div>
+                <div class="campo-formulario">
+                    <label for="input-pass">Contraseña:</label>
+                    <input type="password" id="input-pass" required>
+                </div>
+                <div class="botones-modal">
+                    <button type="button" class="btn-secundario" onclick="cancelarLogin()">Cancelar</button>
+                    <button type="submit" class="btn-primario" style="margin-top: 0;">Entrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<div id="peso-galeria" class="estado"></div>
+
+    <p id="estado-mediateca"
+   class="estado"
+   role="status">
+    Cargando...
+</p>
+
+<!-- Indicador de carga Lottie -->
+<div class="carga">
+    <lottie-player
+        id="cargador"
+        src="media/anim/cargando.json"
+        background="transparent"
+        speed="1"
+        loop
+        autoplay
+        style="width:64px;height:64px"
+        aria-hidden="true">
+    </lottie-player>
+</div>
+
+<!-- Cifras de la mediateca -->
+<dl class="cifras">
+    <div>
+        <dt>Recursos</dt>
+        <dd id="cifra-recursos">0</dd>
+    </div>
+    <div>
+        <dt>MB ahorrados</dt>
+        <dd id="cifra-mb">0</dd>
+    </div>
+    <div>
+        <dt>% de ahorro</dt>
+        <dd id="cifra-pct">0</dd>
+    </div>
+</dl>
+
+<!-- ETAPA 6: REPRODUCTOR DE AUDIO -->
+<section id="audios" class="audios" aria-label="Audios de la mediateca">
+    <h2>Audios</h2>
+</section>
+
+<!-- ETAPA 7: VIDEOTECA -->
+<section id="videoteca" class="videoteca">
+    <h2>Videoteca deportiva</h2>
+
+    <div class="videoteca__principal">
+        <video
+            id="video-principal"
+            controls
+            preload="metadata"
+            playsinline
+            aria-label="Reproductor de vídeos deportivos">
+        </video>
+
+        <p id="titulo-video"></p>
+
+        <p
+            id="aviso-video"
+            class="estado estado--aviso"
+            role="status"
+            hidden>
+        </p>
+    </div>
+
+    <h3>Lista de reproducción</h3>
+
+    <ol
+        id="lista-videos"
+        class="videoteca__lista"
+        aria-label="Lista de vídeos">
+    </ol>
+</section>
+
+
+    <footer>
+        <p>&copy; 2026 Ayuntamiento de Gilena &bull; Área de Deportes &bull; Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

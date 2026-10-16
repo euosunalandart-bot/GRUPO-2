@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "recursos": [
+    {
+      "id": "pista-padel",
+      "tipo": "imagen",
+      "ambito": "deportes",
+      "titulo": "Pista de pádel",
+      "archivo": "img/originales/pista-padel.jpg",
+      "formatos": ["webp", "jpg"],
+      "autor": "Ayuntamiento de Gilena",
+      "licencia": "propia",
+      "fuente": "Fotografía propia",
+      "alt": "Pista de pádel exterior con césped azul renovado",
+      "anchos": [480, 1200],
+      "alto": 800,
+      "pesoOriginalKB": 4210,
+      "pesosKB": {
+        "webp-480": 32,
+        "jpg-480": 51,
+        "webp-1200": 118,
+        "jpg-1200": 196
+      }
+    },
+    {
+      "id": "equipo-futbol",
+      "tipo": "imagen",
+      "ambito": "deportes",
+      "titulo": "Equipo de fútbol municipal",
+      "archivo": "img/originales/equipo-futbol.jpg",
+      "formatos": ["jpg", "webp"],
+      "autor": "Ayuntamiento de Gilena",
+      "licencia": "CC-BY",
+      "fuente": "Fotografía del archivo municipal",
+      "alt": "Equipo de fútbol municipal posando en el campo deportivo",
+      "anchos": [480, 1200],
+      "alto": 800,
+      "pesoOriginalKB": 3850,
+      "pesosKB": {
+        "webp-480": 28,
+        "jpg-480": 45,
+        "webp-1200": 96,
+        "jpg-1200": 165
+      }
+    },
+    {
+      "id": "imagen-piscina",
+      "tipo": "imagen",
+      "ambito": "deportes",
+      "titulo": "Piscina municipal",
+      "archivo": "media/img/originales/piscina.png",
+      "formatos": ["png", "webp"],
+      "autor": "Fotógrafo municipal",
+      "licencia": "CC-BY-NC",
+      "fuente": "Archivo fotográfico municipal",
+      "alt": "Piscina municipal preparada para la temporada de verano",
+      "anchos": [480, 1200],
+      "alto": 800,
+      "pesoOriginalKB": 2940,
+      "pesosKB": {
+        "webp-480": 25,
+        "png-480": 40,
+        "webp-1200": 85,
+        "png-1200": 140
+      }
+    },
+    {
+      "id": "cartel-feria",
+      "tipo": "imagen",
+      "ambito": "cultura",
+      "titulo": "Cartel de la feria",
+      "archivo": "img/originales/cartel-feria.jpg",
+      "formatos": ["tiff", "jpg"],
+      "autor": "Ayuntamiento de Gilena",
+      "licencia": "propia",
+      "fuente": "Archivo municipal",
+      "alt": "Cartel oficial de la feria cultural del municipio",
+      "anchos": [480, 1200],
+      "alto": 800,
+      "pesoOriginalKB": 5120,
+      "pesosKB": {
+        "webp-480": 35,
+        "jpg-480": 55,
+        "webp-1200": 125,
+        "jpg-1200": 210
+      }
+    },
+{
+      "id": "aviso-feria",
+      "tipo": "audio",
+      "ambito": "cultura",
+      "titulo": "Sintonía de aviso",
+      "archivo": "audio/web/aviso", 
+      "formatos": ["mp3", "ogg"],
+      "autor": "usuario_freesound",
+      "licencia": "CC0",
+      "fuente": "https://freesound.org/",
+      "alt": "Sintonía sonora para avisos de actividades culturales",
+      "pesoOriginalKB": 1850,
+      "pesosKB": {
+        "mp3": 149,
+        "ogg": 78
+      },
+      "transcripcion": "Tono de aviso de dos segundos."
+    },
+   
+{
+  "id": "video-padel",
+  "tipo": "video",
+  "ambito": "municipal",
+  "titulo": "Video Padel",
+  "archivo": "video/originales/video-01",
+  "formatos": ["webm", "mp4"],
+  "autor": "Ayuntamiento de Gilena",
+  "licencia": "propia",
+  "fuente": "Archivo audiovisual municipal",
+  "alt": "Grabación en vídeo de padel",
+  "pesoOriginalKB": 12800,
+  "pesosKB": {
+    "mp4": 950,
+    "webm": 780
+  }
+  
+}
+
+  ]
+}
